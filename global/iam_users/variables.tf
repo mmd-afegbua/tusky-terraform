@@ -39,3 +39,34 @@ variable "give_billing_access" {
     description = "If true, billing gets access"
     type = bool
 }
+
+#########################################
+variable "pgp_key" {
+  description = "Either a base-64 encoded PGP public key, or a keybase username in the form `keybase:username`. Used to encrypt password and access key. `pgp_key` is required when `create_iam_user_login_profile` is set to `true`"
+  type        = string
+  default     = ""
+}
+
+variable "password_reset_required" {
+  description = "Whether the user should be forced to reset the generated password on first login."
+  type        = bool
+  default     = false
+}
+
+variable "password_length" {
+  description = "The length of the generated password"
+  type        = number
+  default     = 20
+}
+
+variable "ssh_key_encoding" {
+  description = "Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use SSH. To retrieve the public key in PEM format, use PEM"
+  type        = string
+  default     = "SSH"
+}
+
+variable "ssh_public_key" {
+  description = "The SSH public key. The public key must be encoded in ssh-rsa format or PEM format"
+  type        = string
+  default     = ""
+}

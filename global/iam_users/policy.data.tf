@@ -12,7 +12,8 @@ data "aws_iam_policy_document" "devops" {
         statement {
         effect = "Allow"
         actions = [
-            "ec2:*"
+            "ec2:*",
+            "iam:ChangePassword"
         ]
         resources = ["*"]
     }

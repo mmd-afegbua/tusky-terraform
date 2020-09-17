@@ -1,30 +1,30 @@
 data "aws_iam_policy_document" "billing" {
-    statement {
-        effect = "Allow"
-        actions = [
-            "aws-portal:ViewBilling"
-        ]
-        resources = ["*"]
-    }
+  statement {
+    effect = "Allow"
+    actions = [
+      "aws-portal:ViewBilling"
+    ]
+    resources = ["*"]
+  }
 }
 
 data "aws_iam_policy_document" "devops" {
-        statement {
-        effect = "Allow"
-        actions = [
-            "ec2:*",
-            "iam:ChangePassword"
-        ]
-        resources = ["*"]
-    }
+  statement {
+    effect = "Allow"
+    actions = [
+      "ec2:*",
+      "iam:ChangePassword"
+    ]
+    resources = ["*"]
+  }
 }
 
 data "aws_iam_policy_document" "kube_admin" {
-        statement {
-        effect = "Allow"
-        actions = [
-            "ec2:*"
-        ]
-        resources = ["*"]
-    }
+  statement {
+    effect = "Allow"
+    actions = [
+      "ec2:*"
+    ]
+    resources = ["*"]
+  }
 }

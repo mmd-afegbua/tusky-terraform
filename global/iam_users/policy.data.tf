@@ -13,7 +13,11 @@ data "aws_iam_policy_document" "devops" {
     effect = "Allow"
     actions = [
       "ec2:*",
-      "iam:ChangePassword"
+      "eks:*",
+      "iam:ChangePassword",
+      "iam:ListUsers",
+      "iam:GetUser",
+      "iam:GetUserPolicy"
     ]
     resources = ["*"]
   }

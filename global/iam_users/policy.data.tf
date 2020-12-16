@@ -16,7 +16,7 @@ data "aws_iam_policy_document" "devops" {
       "eks:*",
       "iam:ChangePassword",
       "iam:ListUsers",
-      "iam:GetUser",
+      "iam:ListRoles",
       "iam:GetUserPolicy"
     ]
     resources = ["*"]
